@@ -29,12 +29,12 @@ const Form = ({type, post, setPost, submitting, handleSubmit}) => {
         <label>
           <span className='font-satoshi font-semibold text-base text-gray-700'>
             Tag {` `}
-            <span className='font-normal'>(#product, #webdeveolpment, #idea)</span>
+            <span className='font-normal'>(product, full-stack, ai-image-prompt)</span>
           </span>
           <input
             value={post.tag}
             onChange={(e) => setPost({ ...post, tag: e.target.value })}
-            placeholder="#tag"
+            placeholder="tag"
             required
             className='form_input'
           />
