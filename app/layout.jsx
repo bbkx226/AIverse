@@ -10,6 +10,9 @@ export const metadata = {
 const RootLayout = ({ children }) => {
   return (
     <html lang="en">
+        <head>
+            <link rel="icon" href="/assets/images/ai.png" sizes="any" />
+        </head>
         <body>
             <Provider>
                 <div className='main'>

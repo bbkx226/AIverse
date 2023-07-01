@@ -7,7 +7,7 @@ const handler = NextAuth({
     providers: [
         GoogleProvider({
             clientId: process.env.GOOGLE_ID,
-            clientSecret: process.env.GOOGLE_CLIENT_SECRET
+            clientSecret: process.env.GOOGLE_CLIENT_SECRET,
         })
     ],
     callbacks: {
@@ -40,11 +40,12 @@ const handler = NextAuth({
     
                 return true
             } catch (error) {
-                console.log(error)
+                console.log(error.message)
                 return false
             }
         }
-    }
+    },
+    secret: process.env.NEXTAUTH_SECRET
 })
 
 export { handler as GET, handler as POST}
