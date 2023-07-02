@@ -14,7 +14,7 @@ export const GET = async (req) => {
         });
 
         // Add a unique identifier to the URL to force a cache-busting reload
-        const url = new URL(request.url);
+        const url = new URL(req.url);
         url.searchParams.set("t", Date.now());
         response.headers.set("Cache-Control", "no-cache, no-store, must-revalidate");
         response.headers.set("Pragma", "no-cache");
