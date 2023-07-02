@@ -64,7 +64,15 @@ const PromptCard = ({ post, handleTagClick, handleEdit, handleDelete }) => {
         className='font-inter text-sm blue_gradient cursor-pointer'
         onClick={() => handleTagClick && handleTagClick(post.tag)}
       >
-        #{post.tag}
+        {post.tag.split(" ").map((tag, index) => {
+          const cleanedTag = tag.trim()
+          const tagWithoutHash = cleanedTag.replace("#", "")
+          return (
+            <span key={index} className='font-inter text-sm blue_gradient'>
+              #{tagWithoutHash}{" "}
+            </span>
+          )     
+        })}
       </p>
 
       {session?.user.id === post.creator._id && pathName === '/profile' && (

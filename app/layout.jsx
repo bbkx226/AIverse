@@ -3,8 +3,8 @@ import Nav from '@components/Nav'
 import Provider from '@components/Provider'
 
 export const metadata = {
-    title: "AIverse",
-    description: "Unveil & Spread the Finest AI Prompts!",
+    title: "AI-verse: BrandonGPT Community",
+    description: "Explore, Generate & Distribute the Finest AI Prompts!",
 }
 
 const RootLayout = ({ children }) => {

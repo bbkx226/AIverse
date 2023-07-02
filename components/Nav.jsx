@@ -16,26 +16,29 @@ const Nav = () => {
       const res = await getProviders();
       setProviders(res);
     })();
+    console.log(`Check out my GitHub Profile! https://github.com/bbkx226`)
+    console.log(`Check out my LinkedIn Profile! https://www.linkedin.com/in/bbkx/`)
+    console.log(`Shout out to Adrian who guided me through this project!`)
   }, [])
 
   return (
     <nav className="flex-between w-full mb-16 pt-3">
       <Link href="/" className="flex gap-2 flex-center">
         <Image 
-          src="/assets/images/logo.svg"
+          src="/assets/images/ai.svg"
           alt="AIverse Logo"
           width={30}
           height={30}
           className="object-contain"
         />
-        <p className="logo_text">AIverse</p>
+        <p className="logo_text">AI-verse</p>
       </Link>
-
+      
       {/* Desktop Navigation */}
       <div className="sm:flex hidden">
         {session?.user ? (
           <div className='flex gap-3 md:gap-5'>
-            <Link href="/create-prompt" className="black_btn">Create Post</Link>
+            <Link href="/create-prompt" className="black_btn">Create & Share</Link>
             <button type="button" onClick={signOut} className="outline_btn">
               Sign Out
             </button>

@@ -4,15 +4,25 @@ const Home = () => {
   return (
     <section className="w-full flex-center flex-col">
         <h1 className="head_text text-center">
-            BrandonGPT-Community
+            <span className="fade-in">
+              <span className="fade">B</span>
+              <span className="fade">r</span>
+              <span className="fade">a</span>
+              <span className="fade">n</span>
+              <span className="fade">d</span>
+              <span className="fade">o</span>
+              <span className="fade">n</span>
+              <span className="fade">G</span>
+              <span className="fade">P</span>
+              <span className="fade">T</span>
+            </span>
             <br className="max-md:hidden" />
-            <span className="orange_gradient text-center"> AI-Powered Prompts</span>
+            <span className="galaxy_gradient text-center"> AI-Powered Prompts</span>
         </h1>
         <p className="desc text-center">
-            Introducing AIverse: the game-changing open-source AI prompting tool designed for the modern world. 
-            Unleash your creativity like never before as AIverse empowers you to discover, create, and share a wealth 
-            of captivating prompts. Harnessing the advanced capabilities of artificial intelligence, this cutting-edge 
-            platform opens doors to endless inspiration.
+            Introducing AI-verse: A revolutionary open-source AI prompting tool built for the contemporary era. 
+            Experience unprecedented levels of creativity as AIverse enables you to explore, generate, and distribute 
+            a wide range of captivating prompts.
         </p>
         <Feed />
     </section>
