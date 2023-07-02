@@ -25,6 +25,16 @@ const PromptCard = ({ post, handleTagClick, handleEdit, handleDelete }) => {
     setTimeout(() => setCopied(false), 3000)
   }
 
+  const truncateEmail = (email) => {
+    const maxLength = 4; // Maximum length for the visible part of the email
+  
+    return email.length <= maxLength
+      ? email
+      : `${email.slice(0, maxLength)}${'*'.repeat(email.length - (maxLength * 2))}${email.slice(-maxLength)}`;
+  };
+
+  const truncatedEmail = truncateEmail(post.creator.email)
+
   return (
     <div className="prompt_card">
       <div className='flex justify-between items-start gap-5'>
@@ -45,7 +55,7 @@ const PromptCard = ({ post, handleTagClick, handleEdit, handleDelete }) => {
             {post.creator.username}
           </h3>
           <p className='font-inter text-sm text-gray-500'>
-            {post.creator.email}
+            {truncatedEmail}
           </p>
         </div>
 
