@@ -3,9 +3,16 @@ import { useState, useEffect } from 'react'
 import PromptCard from './PromptCard'
 
 const PromptCardList = ({ data, handleTagClick }) => {
+
+  const shuffledData = [...data];
+
+  for (let i = shuffledData.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [shuffledData[i], shuffledData[j]] = [shuffledData[j], shuffledData[i]];
+  }
   return (
     <div className="mt-16 prompt_layout">
-      {data.map((post) => (
+      {shuffledData.map((post) => (
         <PromptCard 
           key={post._id}
           post={post}
