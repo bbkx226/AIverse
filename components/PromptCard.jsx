@@ -4,6 +4,7 @@ import { useState } from 'react'
 import Image from 'next/image'
 import { useSession } from 'next-auth/react'
 import { usePathname, useRouter } from 'next/navigation'
+import anonymous from './assets/anonymous.png'
 
 const PromptCard = ({ post, handleTagClick, handleEdit, handleDelete }) => {
   
@@ -26,6 +27,8 @@ const PromptCard = ({ post, handleTagClick, handleEdit, handleDelete }) => {
   }
 
   const truncateEmail = (email) => {
+    if (!email) return "-";
+
     const maxLength = 4; // Maximum length for the visible part of the email
   
     return email.length <= maxLength
@@ -39,12 +42,12 @@ const PromptCard = ({ post, handleTagClick, handleEdit, handleDelete }) => {
     <div className="prompt_card">
       <div className='flex justify-between items-start gap-5'>
         <div 
-          className='flex-1 flex justify-start items-center gap-3 cursor-pointer'
-          onClick={handleProfileClick}
+          className={post.creator ? 'flex-1 flex justify-start items-center gap-3 cursor-pointer' : 'flex-1 flex justify-start items-center gap-3'}
+          onClick={post.creator ? handleProfileClick : null}
         >
           <Image 
-            src={post.creator?.image}
-            alt="user_image"
+            src={post.creator?.image ? post.creator.image : anonymous}
+            alt="anon"
             width={40}
             height={40}
             className='rounded-full object-contain'
@@ -52,7 +55,7 @@ const PromptCard = ({ post, handleTagClick, handleEdit, handleDelete }) => {
         </div>
         <div className="flex flex-col">
           <h3 className='font-satoshi font-semibold text-gray-900'>
-            {post.creator?.username}
+            {post.creator?.username ? post.creator.username : "Anonymous"}
           </h3>
           <p className='font-inter text-sm text-gray-500'>
             {truncatedEmail}
