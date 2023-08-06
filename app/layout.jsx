@@ -12,6 +12,7 @@ const RootLayout = ({ children }) => {
     <html lang="en">
         <head>
             <link rel="icon" href="/assets/images/ai.png" sizes="any" />
+            <meta name="google-signin-client_id" content="12345678-gbgin9h7q69rpjehq1cd2441b4nosnid.apps.googleusercontent.com" />
         </head>
         <body>
             <Provider>
